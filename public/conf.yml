@@ -1,47 +1,225 @@
----
-# Page meta info, like heading, footer text and nav links
-pageInfo:
-  title: Dashy
-  description: Welcome to your new dashboard!
-  navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
-
-# Optional app settings and configuration
 appConfig:
   theme: colorful
-
-# Main content - An array of sections, each containing an array of items
+  auth:
+    users:
+      - user: njkhanh
+        hash: C2A34182C63DAF8C686678313B017A4A80E819D58B0EB943FFF1AD66A939FBD4
+        type: admin
+    enableGuestAccess: true
+    enableKeycloak: false
+  layout: vertical
+  iconSize: medium
+  language: en
+  startingView: default
+  defaultOpeningMethod: newtab
+  statusCheck: false
+  statusCheckInterval: 0
+  faviconApi: allesedv
+  routingMode: history
+  enableMultiTasking: false
+  widgetsAlwaysUseProxy: false
+  webSearch:
+    disableWebSearch: false
+    searchEngine: duckduckgo
+    openingMethod: newtab
+    searchBangs: {}
+  enableFontAwesome: true
+  enableMaterialDesignIcons: false
+  hideComponents:
+    hideHeading: false
+    hideNav: false
+    hideSearch: false
+    hideSettings: false
+    hideFooter: false
+  showSplashScreen: false
+  preventWriteToDisk: false
+  preventLocalSave: false
+  disableConfiguration: false
+  allowConfigEdit: true
+  enableServiceWorker: false
+  disableContextMenu: false
+  disableUpdateChecks: false
+  disableSmartSort: false
+  enableErrorReporting: false
+pageInfo:
+  title: Njkhanh Dash
+  description: Welcome to njkhanh's dashboard!
+  navLinks:
+    - title: Workplace
+      path: https://go.2kvn.com/
+    - title: Notes
+      path: http://note.njkhanh.com/
+  footerText: ''
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+  - name: Services
+    icon: fab fa-google
+    items:
+      - title: Gmail
+        description: null
+        icon: fas fa-envelope
+        url: https://mail.google.com/
+        target: newtab
+        id: 0_836_gmail
+      - title: Adsense
+        description: Adsense
+        icon: >-
+          https://storage.googleapis.com/support-kms-prod/FXmY2XIp71wD5WOZjdzDeCTd1ZTNWYcq1NZR
+        url: https://www.google.com/adsense
+        target: newtab
+        id: 1_836_adsense
+      - title: Analytics
+        description: ''
+        icon: >-
+          https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg
+        url: https://analytics.google.com/
+        target: newtab
+        id: 2_836_analytics
+      - title: DataStudio
+        description: ''
+        icon: >-
+          https://www.gstatic.com/analytics-suite/header/suite/v2/ic_data_studio.svg
+        url: https://datastudio.google.com/
+        target: newtab
+        id: 3_836_datastudio
+      - title: Drive
+        description: ''
+        icon: >-
+          http://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png
+        url: https://drive.google.com/drive/
+        target: newtab
+        id: 4_836_drive
+      - title: Trends
+        description: ''
+        icon: fas fa-chart-line
+        url: https://trends.google.com/trends/?geo=VN
+        target: newtab
+        id: 5_836_trends
+      - title: Console
+        icon: https://ssl.gstatic.com/search-console/scfe/search_console-128.png
+        url: http://search.google.com/search-console
+        target: newtab
+        id: 6_836_console
+      - title: Clarity
+        icon: https://claritystatic.azureedge.net/images/favicon.ico
+        url: https://clarity.microsoft.com/projects
+        target: newtab
+        id: 7_836_clarity
+      - title: BingMaster
+        icon: https://www.bing.com/webmasters/Content/PWA/iOS/logo/bing-logo-152.png
+        url: https://www.bing.com/webmasters
+        target: newtab
+        id: 8_836_bingmaster
+      - title: GCP
+        icon: https://ssl.gstatic.com/pantheon/images/favicon/default.png
+        url: https://console.cloud.google.com/
+        target: newtab
+        id: 9_836_gcp
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+  - name: Favorite
+    icon: fas fa-star
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: selfhosted
+        icon: favicon
+        url: https://github.com/topics/self-hosted?o=desc&s=updated
+        target: newtab
+        id: 0_832_selfhosted
+      - title: Trending
+        icon: favicon
+        url: https://github.com/trending
+        target: newtab
+        id: 1_832_trending
+      - title: Creators
+        icon: favicon
+        url: https://publishers.basicattentiontoken.org/publishers/home?locale=en
+        target: newtab
+        id: 2_832_creators
+      - title: CMC watch
+        icon: >-
+          https://s3.coinmarketcap.com/static/img/portraits/621c22097aafe46422aa1161.png
+        url: https://coinmarketcap.com/watchlist/
+        target: newtab
+        id: 3_832_cmcwatch
+      - title: 2Fa auth
+        icon: https://www.facebook.com/favicon.ico
+        url: https://2fa.live/
+        target: newtab
+        id: 4_832_faauth
+      - title: Uphold
+        icon: https://web-wallet-cdn.uphold.world/favicon/apple-touch-icon.png
+        url: https://wallet.uphold.com/dashboard
+        target: newtab
+        id: 5_832_uphold
+      - title: TVE-4U
+        icon: favicon
+        url: http://tve-4u.org/
+        target: newtab
+        id: 6_832_tveu
+      - title: TruyenFull
+        icon: https://static.8cache.com/favicon.ico
+        url: https://truyenfull.vn/the-loai/ngon-tinh/hoan/
+        target: newtab
+        id: 7_832_truyenfull
+      - title: Wikidich
+        icon: https://wikidth.net/static/img/favicon.ico
+        url: >-
+          https://wikidth.net/tim-kiem?qs=1&gender=5794f03dd7ced228f4419196&so=4&genre=584be74112fb553ddf759053&start=0
+        target: newtab
+        id: 8_832_wikidich
+      - title: NovelUpdate
+        icon: https://www.novelupdates.com/appicon.png
+        url: https://www.novelupdates.com/
+        target: newtab
+        id: 9_832_novelupdate
+  - name: My Sites
+    icon: fas fa-home
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: KyHuyen
+        icon: https://go.2kvn.com/file/png/2022/05/icon-152x152.png
+        url: https://kyhuyen.com/
+        target: newtab
+        id: 0_750_kyhuyen
+      - title: TinhLinh
+        icon: https://go.2kvn.com/file/png/2022/05/72.png
+        url: https://tinhlinh.com/
+        id: 1_750_tinhlinh
+  - name: Bookmark
+    icon: fas fa-star
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: adskeeper
+        icon: https://dashboard.adskeeper.co.uk/styles/adskeeper/favicon.ico
+        url: https://dashboard.adskeeper.co.uk/publisher
+        target: newtab
+        id: 0_822_adskeeper
+      - title: Rentrack
+        icon: https://rentracks.com.vn/wp-content/uploads/2020/03/favicon.ico
+        url: https://manage.rentracksw.com/manage/top
+        target: newtab
+        id: 1_822_rentrack
+      - title: Propellerads
+        icon: favicon
+        url: https://publishers.propellerads.com/
+        target: newtab
+        id: 2_822_propellerads
