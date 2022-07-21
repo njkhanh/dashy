@@ -11,7 +11,6 @@ import { Progress } from 'rsup-progress';
 
 // Import views, that are not lazy-loaded
 import Home from '@/views/Home.vue';
-import ConfigAccumulator from '@/utils/ConfigAccumalator';
 
 // Import helper functions, config data and defaults
 import { isAuthEnabled, isLoggedIn, isGuestAccessEnabled } from '@/utils/Auth';
@@ -19,7 +18,18 @@ import { makePageSlug, makePageName } from '@/utils/ConfigHelpers';
 import { metaTagData, startingView, routePaths } from '@/utils/defaults';
 import ErrorHandler from '@/utils/ErrorHandler';
 
-import { pages } from '../public/conf.yml';
+// Import data from users conf file. Note that rebuild is required for this to update.
+import conf from '../public/conf.yml';
+
+if (!conf) {
+  ErrorHandler('You\'ve not got any data in your config file yet.');
+}
+
+// Assign top-level config fields, check not null
+const config = conf || {};
+const pages = config.pages || [];
+const pageInfo = config.pageInfo || {};
+const appConfig = config.appConfig || {};
 
 Vue.use(Router);
 const progress = new Progress({ color: 'var(--progress-bar)' });
@@ -31,17 +41,6 @@ const isAuthenticated = () => {
   const guestEnabled = isGuestAccessEnabled();
   return (!authEnabled || userLoggedIn || guestEnabled);
 };
-
-const getConfig = () => {
-  const Accumulator = new ConfigAccumulator();
-  return {
-    appConfig: Accumulator.appConfig(),
-    pageInfo: Accumulator.pageInfo(),
-    pages: Accumulator.pages(),
-  };
-};
-
-const { appConfig, pageInfo } = getConfig();
 
 /* Get the users chosen starting view from app config, or return default */
 const getStartingView = () => appConfig.startingView || startingView;
@@ -73,10 +72,12 @@ const makeSubConfigPath = (rawPath) => {
 
 /* For each additional config file, create routes for home, minimal and workspace views */
 const makeMultiPageRoutes = (userPages) => {
-  if (!userPages) return [];
+  // If no multi pages specified, or is not array, then return nothing
+  if (!userPages || !Array.isArray(userPages)) return [];
   const multiPageRoutes = [];
+  // For each user page, create an additional route
   userPages.forEach((page) => {
-    if (!page.name || !page.path) {
+    if (!page.name || !page.path) { // Sumin not right, show warning
       ErrorHandler('Additional pages must have both a `name` and `path`');
     }
     // Props to be passed to home mixin

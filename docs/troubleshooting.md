@@ -1,8 +1,9 @@
 # Troubleshooting
 
-> _**This document contains common problems and their solutions.**_
+> _**This document contains common problems and their solutions.**_<br>
+> Please ensure your issue isn't listed here, before opening a new ticket.
 >
-> _If you came across an issue where the solution was not immediately obvious, consider adding it to this list to help other users._
+> _Found something not listed here? Consider adding it, to help other users._
 
 ### Contents
 - [Refused to Connect in Web Content View](#refused-to-connect-in-modal-or-workspace-view)
@@ -29,13 +30,18 @@
 - [Status Checks Failing](#status-checks-failing)
 - [Diagnosing Widget Errors](#widget-errors)
 - [Fixing Widget CORS Errors](#widget-cors-errors)
+- [Widget Shows Error Incorrectly](#widget-shows-error-incorrectly)
 - [Weather Forecast Widget 401](#weather-forecast-widget-401)
-- [Keycloak Redirect Error](#keycloak-redirect-error)
+- [Font Awesome Icons not Displaying](#font-awesome-icons-not-displaying)
+- [Copy to Clipboard not Working](#copy-to-clipboard-not-working)
+- [How to Reset Local Settings](#how-to-reset-local-settings)
+- [How to make a bug report](#how-to-make-a-bug-report)
 - [How-To Open Browser Console](#how-to-open-browser-console)
 - [Git Contributions not Displaying](#git-contributions-not-displaying)
 
 
 ---
+
 ## `Refused to Connect` in Modal or Workspace View
 
 This is not an issue with Dashy, but instead caused by the target app preventing direct access through embedded elements. 
@@ -92,10 +98,18 @@ If this works, but you wish to continue using HTML5 history mode, then a bit of 
 
 ## 404 after Launch from Mobile Home Screen
 
-Similar to the above issue, if you get a 404 after using iOS's “add to Home Screen” feature, then this is caused by Vue router.
+Similar to the above issue, if you get a 404 after using iOS and Android's “Add to Home Screen” feature, then this is caused by Vue router.
 It can be fixed by setting `appConfig.routingMode` to `hash`
 
-See also: [#628](https://github.com/Lissy93/dashy/issues/628)
+See also: [#628](https://github.com/Lissy93/dashy/issues/628), [#762](https://github.com/Lissy93/dashy/issues/762)
+
+---
+
+## 404 On Multi-Page Apps
+
+Similar to above, if you get a 404 error when visiting a page directly on multi-page apps, then this can be fixed under `appConfig`, by setting `routingMode` to `hash`. Then rebuilding, and refreshing the page.
+
+See also: [#670](https://github.com/Lissy93/dashy/issues/670), [#763](https://github.com/Lissy93/dashy/issues/763)
 
 ---
 
@@ -213,6 +227,13 @@ Note that for requests that transport sensitive info like credentials, setting t
 You should also ensure that Keycloak is correctly configured, with a user, realm and application, and be sure that you have set a valid redirect URL in Keycloak ([screenshot](https://user-images.githubusercontent.com/1862727/148599768-db4ee4f8-72c5-402d-8f00-051d999e6267.png)).
 
 For more details on how to set headers, see the [Example Headers](/docs/management.md#setting-headers) in the management docs, or reference the documentation for your proxy.
+
+If you're running in Kubernetes, you will need to enable CORS ingress rules, see [docs](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#enable-cors), e.g:
+
+```
+nginx.ingress.kubernetes.io/cors-allow-origin: "https://dashy.example.com"
+nginx.ingress.kubernetes.io/enable-cors: "true"
+```
 
 See also: #479, #409, #507, #491, #341, #520
 
@@ -402,32 +423,114 @@ For testing purposes, you can use an addon, which will disable the CORS checks. 
 
 ---
 
-## Weather Forecast Widget 401
+## Widget Shows Error Incorrectly
 
-[Weather widget](/docs/widgets.md#weather-forecast) is working fine, but you are getting a `401` for the [Weather Forecast widget](/docs/widgets.md#weather-forecast), then this is most likely an OWM API key issue.
+When there's an error fetching or displaying a widgets data, then it will be highlighted in yellow, and a message displayed on the UI.
 
-The forecasting API requires an upgraded plan. ULPT: You can get a free, premium API key by filling in [this form](https://home.openweathermap.org/students). It's a student plan, but there's no verification to check that you are still a student.
-
-A future update will be pushed out, to use a free weather forecasting API.
+In some instances, this is a false positive, and the widget is actually functioning correctly.
+If this is the case, you can disable the UI error message of a given widget by setting: `ignoreErrors: true`
 
 ---
 
-## Keycloak Redirect Error
+## Weather Forecast Widget 401
 
-Firstly, ensure that in your Keycloak instance you have populated the Valid Redirect URIs field ([screenshot](https://user-images.githubusercontent.com/1862727/148599768-db4ee4f8-72c5-402d-8f00-051d999e6267.png)) with the URL to your Dashy instance.
+A 401 error means your API key is invalid, it is not an issue with Dashy.
 
-You may need to specify CORS headers on your Keycloak instance, to allow requests coming from Dashy, e.g:
+Usually this happens due to an error in your config. If you're unsure, copy and paste the [example](/docs/widgets.md#weather) config, replacing the API key with your own.
 
-```
-Access-Control-Allow-Origin: https://dashy.example.com
-```
+Check that `apiKey` is correctly specified, and nested within `options`. Ensure your input city is valid.
 
-If you're running in Kubernetes, you will need to enable CORS ingress rules, see [docs](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#enable-cors), e.g:
+To test your API key, try making a request to `https://api.openweathermap.org/data/2.5/weather?q=London&appid=[your-api-key]`
 
-```
-nginx.ingress.kubernetes.io/cors-allow-origin: "https://dashy.example.com"
-nginx.ingress.kubernetes.io/enable-cors: "true"
-```
+If [Weather widget](/docs/widgets.md#weather-forecast) is working fine, but you are getting a `401` for the [Weather Forecast widget](/docs/widgets.md#weather-forecast), then this is also an OWM API key issue.
+Since the forecasting API requires an upgraded plan. ULPT: You can get a free, premium API key by filling in [this form](https://home.openweathermap.org/students). It's a student plan, but there's no verification to check that you are still a student.
+
+A future update will be pushed out, to use a free weather forecasting API.
+
+See also: [#803](https://github.com/Lissy93/dashy/issues/803), [#789](https://github.com/Lissy93/dashy/issues/789), [#577](https://github.com/Lissy93/dashy/issues/577), [#621](https://github.com/Lissy93/dashy/issues/621), [#578](https://github.com/Lissy93/dashy/issues/578)
+
+---
+
+## Font Awesome Icons not Displaying
+
+Usually, Font Awesome will be automatically enabled if one or more of your icons are using Font-Awesome. If this is not happening, then you can always manually enable (or disable) Font Awesome by setting: [`appConfig`](/docs/configuring.md#appconfig-optional).`enableFontAwesome` to `true`.
+
+If you are trying to use a premium icon, then you must have a [Pro License](https://fontawesome.com/plans). You'll then need to specify your Pro plan API key under `appConfig.fontAwesomeKey`. You can find this key, by logging into your FA account, navigate to Account → [Kits](https://fontawesome.com/kits) → New Kit → Copy Kit Code. The code is a 10-digit alpha-numeric code, and is also visible within the new kit's URL, for example: `81e48ce079`.
+
+Be sure that you're specifying the icon category and name correctly. You're icon should look be `[category] fa-[icon-name]`. The following categories are supported: `far` _(regular)_, `fas` _(solid)_, `fal`_(light)_, `fad` _(duo-tone)_ and `fab`_(brands)_. With the exception of brands, you'll usually want all your icons to be in from same category, so they look uniform.
+
+Ensure the icon you are trying to use, is available within [FontAwesome Version 5](https://fontawesome.com/v5/search).
+
+Examples: `fab fa-raspberry-pi`, `fas fa-database`, `fas fa-server`, `fas fa-ethernet`
+
+Finally, check the [browser console](#how-to-open-browser-console) for any error messages, and raise a ticket if the issue persists.
+
+---
+
+## Copy to Clipboard not Working
+
+If the copy to clipboard feature (either under Config --> Export, or Item --> Copy URL) isn't functioning as expected, first check the browser console. If you see `TypeError: Cannot read properties of undefined (reading 'writeText')` then this feature is not supported by your browser. 
+The most common reason for this, is if you not running the app over HTTPS. Copying to the clipboard requires the app to be running in a secure origin / aka have valid HTTPS cert. You can read more about this [here](https://stackoverflow.com/a/71876238/979052).
+
+As a workaround, you could either:
+- Highlight the text and copy / <kbd>Ctrl</kbd> + <kbd>C</kbd>
+- Or setup SSL - [here's a guide](https://github.com/Lissy93/dashy/blob/master/docs/management.md#ssl-certificates) on doing so
+
+---
+
+## How to Reset Local Settings
+
+Some settings are stored locally, in the browser's storage.
+
+In some instances cached assets can prevent your settings from being updated, in which case you may wish to reset local data.
+
+To clear all local data from the UI, head to the Config Menu, then click "Reset Local Settings", and Confirm when prompted.
+This will not affect your config file. But be sure that you keep a backup of your config, if you've not written changes it to disk.
+
+You can also view any and all data that Dashy is storing, using the developer tools. Open your browser's dev tools (usually <kbd>F12</kbd>), in Chromium head to the Application tab, or in Firefox go to the Storage tab. Select Local Storage, then scroll down the the URL Dashy is running on. You should now see all data being stored, and you can select and delete any fields you wish. 
+
+For a full list of all data that may be cached, see the [Privacy Docs](/docs/privacy.md#browser-storage).
+
+---
+
+## How to make a bug report
+
+#### Step 1 - Where to open issues
+
+You will need a GitHub account in order to raise a ticket. You can then [click here](https://github.com/Lissy93/dashy/issues/new?assignees=lissy93&labels=%F0%9F%90%9B+Bug&template=bug.yml&title=%5BBUG%5D+%3Ctitle%3E) to open a new bug report.
+
+#### Step 2 - Checking it's not already covered
+
+Before submitting, please check that:
+- A similar ticket has not previously been opened
+- The issue is not covered in the [troubleshooting guide](https://github.com/Lissy93/dashy/blob/master/docs/troubleshooting.md) or [docs](https://github.com/Lissy93/dashy/tree/master/docs#readme)
+
+#### Step 3 - Describe the Issue
+
+Your ticket will likely be dealt with more effectively if you can explain the issue clearly, and provide all relevant supporting material.
+
+Complete the fields, asking for your environment info and version of Dashy.
+Then describe the issue, briefly explaining the steps to reproduce, expected outcome and actual outcome.
+
+#### Step 4 - Provide Supporting Info
+
+Where relevant please also include:
+
+- A screenshot of the issue
+- The relevant parts of your config file
+- Logs
+  - If client-side issue, then include the browser logs ([see how](#how-to-open-browser-console))
+  - If server-side / during deployment, include the terminal output
+
+_Take care to redact any personal info, (like IP addresses, auth hashes or API keys)_
+
+#### Step 5 - Fix Released
+
+A maintainer will aim to respond within 48 hours.
+The timeframe for resolving your issue, will vary depending on severity of the bug and the complexity of the fix.
+You will be notified on your ticket, when a fix has been released.
+
+Finally, be sure to remain respectful to other users and project maintainers, in line with the [Contributor Covenant Code of Conduct](https://github.com/Lissy93/dashy/blob/master/.github/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
 
 ---
 

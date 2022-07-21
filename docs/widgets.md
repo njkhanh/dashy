@@ -2,10 +2,6 @@
 
 Dashy has support for displaying dynamic content in the form of widgets. There are several built-in widgets available out-of-the-box as well as support for custom widgets to display stats from almost any service with an API.
 
-> ℹ️ **Note**: Widgets are still in the Alpha-phase of development.
-> If you find a bug, please raise it.<br>
-> Adding / editing widgets through the UI isn't yet supported, you will need to do this in the YAML config file.
-
 ##### Contents
 - **[General Widgets](#general-widgets)**
   - [Clock](#clock)
@@ -15,6 +11,7 @@ Dashy has support for displaying dynamic content in the form of widgets. There a
   - [Image](#image)
   - [Public IP Address](#public-ip)
   - [IP Blacklist Checker](#ip-blacklist)
+  - [Domain Monitor](#domain-monitor)
   - [Crypto Watch List](#crypto-watch-list)
   - [Crypto Price History](#crypto-token-price-history)
   - [Crypto Wallet Balance](#wallet-balance)
@@ -47,6 +44,17 @@ Dashy has support for displaying dynamic content in the form of widgets. There a
   - [Recent Traffic](#recent-traffic)
   - [Stat Ping Statuses](#stat-ping-statuses)
   - [Synology Download Station](#synology-download-station)
+  - [AdGuard Home Block Stats](#adguard-home-block-stats)
+  - [AdGuard Home Filters](#adguard-home-filters)
+  - [AdGuard Home DNS Info](#adguard-home-dns-info)
+  - [AdGuard Home Top Domains](#adguard-home-top-domains)
+  - [Nextcloud User](#nextcloud-user)
+  - [Nextcloud User Statuses](#nextcloud-user-statuses)
+  - [Nextcloud Notifications](#nextcloud-notifications)
+  - [Nextcloud System](#nextcloud-system)
+  - [Nextcloud Stats](#nextcloud-stats)
+  - [Nextcloud PHP Opcache](#nextcloud-php-opcache-stats)
+  - [Sabnzbd](#sabnzbd)
 - **[System Resource Monitoring](#system-resource-monitoring)**
   - [CPU Usage Current](#current-cpu-usage)
   - [CPU Usage Per Core](#cpu-usage-per-core)
@@ -73,6 +81,8 @@ Dashy has support for displaying dynamic content in the form of widgets. There a
   - [Continuous Updates](#continuous-updates)
   - [Proxying Requests](#proxying-requests)
   - [Setting Timeout](#setting-timeout)
+  - [Adding Labels](#adding-labels)
+  - [Ignoring Errors](#ignoring-errors)
   - [Custom CSS Styling](#widget-styling)
   - [Customizing Charts](#customizing-charts)
   - [Language Translations](#language-translations)
@@ -97,6 +107,7 @@ A simple, live-updating time and date widget with time-zone support. All fields 
 **`format`** | `string` | _Optional_ | A country code for displaying the date and time in local format.<br>Specified as `[ISO-3166]-[ISO-639]`, for example: `en-AU`. See [here](https://www.fincher.org/Utilities/CountryLanguageList.shtml) for a full list of locales. Defaults to the browser / device's region
 **`customCityName`** | `string` |  _Optional_ | By default the city from the time-zone is shown, but setting this value will override that text
 **`hideDate`** | `boolean` |  _Optional_ | If set to `true`, the date and city will not be shown. Defaults to `false`
+**`hideSeconds`** | `boolean` |  _Optional_ | If set to `true`, seconds will not be shown. Defaults to `false`
 
 ##### Example
 
@@ -316,6 +327,43 @@ Notice certain web pages aren't loading? This widget quickly shows which blackli
 - **Price**: 🟠 Free Plan
 - **Host**: Managed Instance Only
 - **Privacy**: _See [BlacklistChecker Privacy Policy](https://blacklistchecker.com/privacy)_
+
+---
+
+### Domain Monitor
+
+Keep an eye on the expiry dates of your domain names, using public whois records fetched from [whoapi.com](https://whoapi.com/). Click the domain name to view additional info, like registrar, name servers and date last updated.
+
+<p align="center"><img width="600" src="https://i.ibb.co/7XjByG9/domain-monitor.png" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`domain`** | `string` |  Required | The domain to check
+**`apiKey`** | `string` |  Required | You can get your free API key from [my.whoapi.com](https://my.whoapi.com/user/signup)
+**`showFullInfo`** | `boolean` |  _Optional_ | If set to true, the toggle-full-info panel will be open by default
+
+##### Example 
+
+```yaml
+  - type: domain-monitor
+    options:
+      domain: example.com
+      apiKey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+  - type: domain-monitor
+    options:
+      domain: example2.com
+      apiKey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+##### Info
+- **CORS**: 🟢 Enabled
+- **Auth**: 🔴 Required
+- **Price**: 🟠 Free Plan (10,000 requests)
+- **Host**: Managed Instance Only
+- **Privacy**: _See [WhoAPI Privacy Policy](https://whoapi.com/privacy-policy/)_
 
 ---
 
@@ -713,6 +761,7 @@ Show recent scores and upcoming matches from your favourite sports team. Data is
 **`pastOrFuture`** | `string` |  __Optional__ | Set to `past` to show scores for recent games, or `future` to show upcoming games. Defaults to `past`. You can change this within the UI
 **`apiKey`** | `string` | __Optional__ | Optionally specify your API key, which you can sign up for at [TheSportsDB.com](https://www.thesportsdb.com/)
 **`limit`** | `number` | __Optional__ | To limit output to a certain number of matches, defaults to `15`
+**`hideImage`** | `boolean` | __Optional__ | Set to `true` to not render the team / match banner image, defaults to `false`
 
 ##### Example
 
@@ -964,7 +1013,7 @@ Displays airport departure and arrival flights, using data from [AeroDataBox](ht
 
 ### Astronomy Picture of the Day
 
-Show the NASA Astronomy Pictore of the Day. Data is fetched from [APOD](https://apod.nasa.gov/apod/) using [PawelPleskaczynski/apod_api](https://github.com/PawelPleskaczynski/apod_api).
+Show the NASA Astronomy Pictore of the Day. Data is fetched from [APOD](https://apod.nasa.gov/apod/) using [@Lissy93/go-apod](https://github.com/lissy93/go-apod) / hosted at [apod.as93.net](https://apod.as93.net/).
 
 <p align="center"><img width="400" src="https://i.ibb.co/ZMkgLFK/apod.png" /></p>
 
@@ -982,7 +1031,7 @@ _No config options._
 - **CORS**: 🟢 Enabled
 - **Auth**: 🟢 Not Required
 - **Price**: 🟢 Free
-- **Host**: Managed Instance or Self-Hosted (see [PawelPleskaczynski/apod_api](https://github.com/PawelPleskaczynski/apod_api))
+- **Host**: Managed Instance or Self-Hosted (see [@Lissy93/go-apod](https://github.com/lissy93/go-apod))
 - **Privacy**: _See [NASA's Privacy Policy](https://www.nasa.gov/about/highlights/HP_Privacy.html)_
 
 ---
@@ -1079,6 +1128,8 @@ _No config options._
 
 ##### Info
 No external data requests made
+
+Note that this widget is not available if you are running Dashy in a container or VM. Instead you can use the [System Monitoring](#system-resource-monitoring) widgets to display stats from the host system instead.
 
 ---
 
@@ -1308,6 +1359,9 @@ Displays the current and recent uptime of your running services, via a self-host
 **Field** | **Type** | **Required** | **Description**
 --- | --- | --- | ---
 **`hostname`** | `string` |  Required | The URL to your StatPing instance, without a trailing slash
+**`groupId`** | `number` | Optional | If provided, only Services in the given group are displayed. Defaults to `0` in which case all services are displayed.
+**`showChart`** | `boolean`| Optional | If provided and `false` then charts are not displayed. Defaults to `true`.
+**`showInfo`** | `boolean`| Optional | If provided and `false` then information summaries are not displayed. Defaults to `true`.
 
 ##### Example 
 
@@ -1316,6 +1370,18 @@ Displays the current and recent uptime of your running services, via a self-host
   options:
     hostname: http://192.168.130.1:8080
 ```
+or
+```yaml
+- type: stat-ping
+  options:
+    hostname: http://192.168.130.1:8080
+    groupId: 3
+    showChart: false
+    showInfo: false
+```
+You can use multiple StatPing widgets with different `groupId`s.
+
+Note, the Group Id is not directly visible in SttatPing UI, you can inspect the group select HTML element or the API response to find out.
 
 ##### Info
 - **CORS**: 🟠 Proxied
@@ -1330,7 +1396,7 @@ Displays the current and recent uptime of your running services, via a self-host
 
 Displays the current downloads/torrents tasks of your Synology NAS
 
-<p align="center"><img width="300" src="https://i.ibb.co/N2kKWTN/image.png" /></p>
+<p align="center"><img width="500" src="https://i.ibb.co/N2kKWTN/image.png" /></p>
 
 ##### Options
 
@@ -1358,6 +1424,406 @@ Displays the current downloads/torrents tasks of your Synology NAS
 - **Price**: 🟢 Free
 - **Host**: Self-Hosted (see [Synology](https://www.synology.com/en-us))
 - **Privacy**: _See [Synology Privacy Statement](https://www.synology.com/en-us/company/legal/privacy)_
+
+---
+
+### AdGuard Home Block Stats
+
+Fetches data from your [AdGuard Home](https://adguard.com/en/adguard-home/overview.html) instance, and
+displays total number of allowed and blocked queries, plus a pie chart showing breakdown by block type.
+
+<p align="center"><img width="400" src="https://i.ibb.co/qgkcxsN/adguard-block-percent-2.png" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL to your AdGuard Home instance
+**`username`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your username here
+**`password`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your password here
+
+##### Example 
+
+```yaml
+- type: adguard-stats
+  useProxy: true
+  options:
+    hostname: http://127.0.0.1
+    username: admin
+    password: test
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟠 Optional
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [AdGuard Home](https://adguard.com/en/adguard-home/overview.html))
+- **Privacy**: _See [AdGuard Privacy Policy](https://adguard.com/en/privacy.html)_
+
+
+---
+
+### AdGuard Home Filters
+
+Fetches data from your [AdGuard Home](https://adguard.com/en/adguard-home/overview.html) instance, to display the current status of each of your filter lists. Includes filter name, last updated, number of items, and a link to the list.
+
+<p align="center"><img width="400" src="https://i.ibb.co/WsJkf5g/adguard-filters-list.png" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL to your AdGuard Home instance
+**`username`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your username here
+**`password`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your password here
+**`showOnOffStatusOnly`** | `boolean` |  _Optional_ | If set to `true`, will only show aggregated AdGuard filter status (on/off), instead of a list of filters
+
+##### Example 
+
+```yaml
+- type: adguard-filter-status
+  useProxy: true
+  options:
+    hostname: http://127.0.0.1
+    username: admin
+    password: test
+    showOnOffStatusOnly: false
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟠 Optional
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [AdGuard Home](https://adguard.com/en/adguard-home/overview.html))
+- **Privacy**: _See [AdGuard Privacy Policy](https://adguard.com/en/privacy.html)_
+
+---
+
+### AdGuard Home DNS Info
+
+Fetches data from your [AdGuard Home](https://adguard.com/en/adguard-home/overview.html) instance, and displays the current status (Enabled / Disabled) of AdGuard DNS. Click show more to view detailed info, including upstream DNS provider, active ports, and the status of DNSSEC, EDNS CS, PTR and IPv6.
+
+<p align="center"><img width="400" src="https://i.ibb.co/G0JngBb/adguard-dns-info.png" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL to your AdGuard Home instance
+**`username`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your username here
+**`password`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your password here
+**`showFullInfo`** | `boolean` |  _Optional_ | If set to `true`, the full DNS info will be shown by default, without having to click "Show Info"
+
+##### Example 
+
+```yaml
+- type: adguard-dns-info
+  useProxy: true
+  options:
+    hostname: http://127.0.0.1
+    username: admin
+    password: test
+    showFullInfo: false
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟠 Optional
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [AdGuard Home](https://adguard.com/en/adguard-home/overview.html))
+- **Privacy**: _See [AdGuard Privacy Policy](https://adguard.com/en/privacy.html)_
+
+---
+
+### AdGuard Home Top Domains
+
+Fetches data from your [AdGuard Home](https://adguard.com/en/adguard-home/overview.html) instance, and displays a list of the most queried, and most blocked domains.
+
+<p align="center"><img width="600" src="https://i.ibb.co/qRhYYTk/adguard-top-domains.png" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL to your AdGuard Home instance
+**`username`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your username here
+**`password`** | `string` |  _Optional_ | If you've got auth enabled on AdGuard, provide your password here
+**`limit`** | `number` |  _Optional_ | Specify the number of results to show, between `1` and `100`, defaults to `10`
+**`hideBlockedDomains`** | `boolean` |  _Optional_ | Don't show the blocked domains list (queried domains only)
+**`hideQueriedDomains`** | `boolean` |  _Optional_ | Don't show the queried domains list (blocked domains only)
+
+##### Example 
+
+```yaml
+- type: adguard-top-domains
+  useProxy: true
+  options:
+    hostname: http://127.0.0.1
+    username: admin
+    password: test
+    limit: 10
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟠 Optional
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [AdGuard Home](https://adguard.com/en/adguard-home/overview.html))
+- **Privacy**: _See [AdGuard Privacy Policy](https://adguard.com/en/privacy.html)_
+
+---
+
+### Nextcloud User
+
+Nextcloud is a [self hosted](https://nextcloud.com/install/#instructions-server) productivity platform, it can also be used free of charge with [hundreds of existing hosting providers](https://nextcloud.com/sign-up/) that offer a free Nextcloud account.
+
+Displays branding information of a Nextcloud server (logo, url, slogan) and some user details (name, login name, last login, disk space or quota). Use with regular or admin user.
+
+Shows quota usage when quota is enabled for the user or disk usage when not enabled.
+
+Known issues: the User API incorrectly reports available disk space as total for admin users when quota is not enabled (which usually is the case for admins).
+
+<p align="center"><img width="450" src="https://i.ibb.co/F8Fdm3t/nextcloud-user.png" alt="nextcloud-user" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL of the Nextcloud server
+**`username`** | `string` |  Required | Nextcloud username
+**`password`** | `string` |  Required | Nextcloud app-password (create one in Settings -> Security)
+
+
+##### Example 
+
+```yaml
+- type: nextcloud-user
+  useProxy: true
+  options:
+    hostname: https://nextcloud.example.com
+    username: alice
+    password: xxxxx-xxxxx-xxxxx-xxxxx
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Nextcloud](https://nextcloud.com))
+- **Privacy**: _See [Nextcloud Privacy Policy](https://nextcloud.com/privacy)_
+
+---
+
+### Nextcloud User Statuses
+
+Show user statuses for selected users.
+
+<p align="center"><img width="450" src="https://i.ibb.co/Lk4DFT5/nextcloud-userstatus.png" alt="nextcloud-userstatus" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL of the Nextcloud server
+**`username`** | `string` |  Required | Nextcloud username
+**`password`** | `string` |  Required | Nextcloud app-password (create one in Settings -> Security)
+**`users`** | `array` |  Required | Nextcloud User IDs to show statuses for, list size between `1` and `100`
+**`showEmpty`** | `boolean` |  _Optional_ | Show statuses without a message, defaults to `true`
+
+
+##### Example 
+
+```yaml
+- type: nextcloud-userstatus
+  useProxy: true
+  options:
+    hostname: https://nextcloud.example.com
+    username: alice
+    password: xxxxx-xxxxx-xxxxx-xxxxx
+    users: ['bob', 'alice']
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Nextcloud](https://nextcloud.com))
+- **Privacy**: _See [Nextcloud Privacy Policy](https://nextcloud.com/privacy)_
+
+---
+
+### Nextcloud Notifications
+
+Displays your notifications and allows deleting them.
+
+<p align="center"><img width="450" src="https://i.ibb.co/yQCS51k/nextcloud-notifications.png" alt="nextcloud-notifications" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL of the Nextcloud server
+**`username`** | `string` |  Required | Nextcloud username
+**`password`** | `string` |  Required | Nextcloud app-password (create one in Settings -> Security)
+**`limit`** | `number\|string` |  _Optional_ | Limit displayed notifications either by count, e.g. `5` to show the 5 most recent, or by age, e.g. `1d` to only show notifications not older than a day. Accepted suffixes for age limit are `m`, `h` and `d`. 
+
+
+##### Example 
+
+```yaml
+- type: nextcloud-userstatus
+  useProxy: true
+  options:
+    hostname: https://nextcloud.example.com
+    username: alice
+    password: xxxxx-xxxxx-xxxxx-xxxxx
+    limit: 6h
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Nextcloud](https://nextcloud.com))
+- **Privacy**: _See [Nextcloud Privacy Policy](https://nextcloud.com/privacy)_
+
+---
+
+### Nextcloud System
+
+Visualises overall memory utilisation and CPU load averages, shows server versions.
+
+<p align="center"><img width="450" src="https://i.ibb.co/KW4t6nG/nextcloud-system.png" alt="nextcloud-system" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL of the Nextcloud server
+**`username`** | `string` |  Required | Must be a Nextcloud admin user
+**`password`** | `string` |  Required | Nextcloud app-password (create one in Settings -> Security)
+
+##### Example 
+
+```yaml
+- type: nextcloud-system
+  useProxy: true
+  options:
+    hostname: https://nextcloud.example.com
+    username: alice
+    password: xxxxx-xxxxx-xxxxx-xxxxx
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Nextcloud](https://nextcloud.com))
+- **Privacy**: _See [Nextcloud Privacy Policy](https://nextcloud.com/privacy)_
+
+---
+
+### Nextcloud Stats
+
+Shows key usage statistics about your Nextcloud server.
+
+<p align="center"><img width="450" src="https://i.ibb.co/pPXPQFB/nextcloud-stats.png" alt="nextcloud-stats" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL of the Nextcloud server
+**`username`** | `string` |  Required | Must be a Nextcloud admin user
+**`password`** | `string` |  Required | Nextcloud app-password (create one in Settings -> Security)
+
+##### Example 
+
+```yaml
+- type: nextcloud-stats
+  useProxy: true
+  options:
+    hostname: https://nextcloud.example.com
+    username: alice
+    password: xxxxx-xxxxx-xxxxx-xxxxx
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Nextcloud](https://nextcloud.com))
+- **Privacy**: _See [Nextcloud Privacy Policy](https://nextcloud.com/privacy)_
+
+---
+
+### Nextcloud PHP Opcache Stats
+
+Shows statistics about PHP Opcache perforamnce on your Nextcloud server.
+
+<p align="center"><img width="450" src="https://i.ibb.co/xf6M4J2/nextcloud-phpopcache.png" alt="nextcloud-phpopcache" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`hostname`** | `string` |  Required | The URL of the Nextcloud server
+**`username`** | `string` |  Required | Must be a Nextcloud admin user
+**`password`** | `string` |  Required | Nextcloud app-password (create one in Settings -> Security)
+
+##### Example 
+
+```yaml
+- type: nextcloud-stats
+  useProxy: true
+  options:
+    hostname: https://nextcloud.example.com
+    username: alice
+    password: xxxxx-xxxxx-xxxxx-xxxxx
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Nextcloud](https://nextcloud.com))
+- **Privacy**: _See [Nextcloud Privacy Policy](https://nextcloud.com/privacy)_
+
+---
+
+### Sabnzbd
+
+Shows queue information regarding your self hosted Sabnzbd server.
+
+<p align="center"><img width="450" src="https://i.ibb.co/5TTSRyM/sabnzbd.png" alt="Sabnzbd" /></p>
+
+##### Options
+
+**Field** | **Type** | **Required** | **Description**
+--- | --- | --- | ---
+**`sabnzbdUrl`** | `string` |  Required | The URL of the Sabnzbd server. No trailing `/`.
+**`apiKey`** | `string` |  Required | API key for Sabnzbd access. Located under `Config` -> `General` -> `Security` -> `API Key`. 
+**`hideDetails`** | `boolean` |  _Optional_ | Hides extra server queue details.
+**`hideQueue`** | `boolean` |  _Optional_ | Hides the queue list in an expandable dropdown.
+
+
+##### Example 
+
+```yaml
+  - type: sabnzbd
+    options:
+      sabnzbdUrl: 'https://sabnzbd.example.com'
+      apiKey: XXXXXXXXXXXXXXXXXX
+      hideDetails: false
+      hideQueue: false
+```
+
+##### Info
+- **CORS**: 🟠 Proxied
+- **Auth**: 🟢 Required
+- **Price**: 🟢 Free
+- **Host**: Self-Hosted (see [Sabnzbd](https://sabnzbd.org/))
+- **Privacy**: _See [Sabnzbd Privacy Policy](https://forums.sabnzbd.org/ucp.php?mode=privacy)_
 
 ---
 
@@ -1831,6 +2297,47 @@ For example:
 ```yaml
 - type: gl-current-cpu
   timeout: 8000
+  options:
+    hostname: https://glances.dns-device.local
+```
+
+---
+
+### Adding Labels
+
+If you have multiple widgets of the same type in a single section, it may not be clear what each one is. To overcome this, you can add a custom label to any given widget, using the `label` property.
+
+For example:
+
+```yaml
+- name: CPU Usage
+  icon: fas fa-tachometer
+  widgets:
+  - type: gl-current-cpu
+    label: Meida Server
+    options:
+      hostname: http://media-server.lan:61208
+  - type: gl-current-cpu
+    label: Firewall
+    options:
+      hostname: http://firewall.lan:61208
+  - type: gl-current-cpu
+    label: File Sync Server
+    options:
+      hostname: http://file-sync.lan:61208
+```
+
+---
+
+### Ignoring Errors
+
+When there's an error fetching or displaying a widgets data, then it will be highlighted in yellow, and a message displayed on the UI.
+
+In some instances, this is a false positive, and the widget is actually functioning correctly. If this is the case, you can disable the UI error message of a given widget by setting: `ignoreErrors: true`
+
+```yaml
+- type: gl-disk-io
+  ignoreErrors: true
   options:
     hostname: https://glances.dns-device.local
 ```

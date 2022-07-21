@@ -8,6 +8,7 @@ import sl from '@/assets/locales/sl.json';
 import es from '@/assets/locales/es.json';
 import it from '@/assets/locales/it.json';
 import zhCN from '@/assets/locales/zh-CN.json';
+import zhTW from '@/assets/locales/zh-TW.json';
 import ar from '@/assets/locales/ar.json';
 import hi from '@/assets/locales/hi.json';
 import ja from '@/assets/locales/ja.json';
@@ -16,6 +17,8 @@ import ru from '@/assets/locales/ru.json';
 import nb from '@/assets/locales/nb.json';
 import pirate from '@/assets/locales/zz-pirate.json';
 import sv from '@/assets/locales/sv.json';
+import bg from '@/assets/locales/bg.json';
+import ko from '@/assets/locales/ko.json';
 
 // Language data - Next register your language by adding it to this list
 export const languages = [
@@ -73,6 +76,12 @@ export const languages = [
     locale: zhCN,
     flag: '🇨🇳',
   },
+  { // Chinese
+    name: '繁體中文',
+    code: 'zh-TW',
+    locale: zhTW,
+    flag: '🇹🇼',
+  },
   { // Arabic
     name: 'العربية',
     code: 'ar',
@@ -120,6 +129,18 @@ export const languages = [
     code: 'sv',
     locale: sv,
     flag: '🇸🇪',
+  },
+  { // Bulgarian
+    name: 'Български',
+    code: 'bg',
+    locale: bg,
+    flag: '🇧🇬',
+  },
+  { // Korean
+    name: '한국어',
+    code: 'ko',
+    locale: ko,
+    flag: '🇰🇷',
   },
 ];
 

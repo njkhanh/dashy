@@ -31,7 +31,11 @@ export default class ConfigAccumulator {
   appConfig() {
     let appConfigFile = {};
     // Set app config from file
-    if (this.conf) appConfigFile = this.conf.appConfig || buildConf.appConfig || {};
+    if (this.conf && this.conf.appConfig) {
+      appConfigFile = this.conf.appConfig;
+    } else if (buildConf && buildConf.appConfig) {
+      appConfigFile = buildConf.appConfig;
+    }
     // Fill in defaults if anything missing
     let usersAppConfig = defaultAppConfig;
     if (localStorage[localStorageKeys.APP_CONFIG]) {
@@ -40,11 +44,11 @@ export default class ConfigAccumulator {
       usersAppConfig = appConfigFile;
     }
     // Some settings have their own local storage keys, apply them here
-    usersAppConfig.layout = appConfigFile.layout
-      || localStorage[localStorageKeys.LAYOUT_ORIENTATION]
+    usersAppConfig.layout = localStorage[localStorageKeys.LAYOUT_ORIENTATION]
+      || appConfigFile.layout
       || defaultLayout;
-    usersAppConfig.iconSize = appConfigFile.iconSize
-      || localStorage[localStorageKeys.ICON_SIZE]
+    usersAppConfig.iconSize = localStorage[localStorageKeys.ICON_SIZE]
+      || appConfigFile.iconSize
       || defaultIconSize;
     // Don't let users modify users locally
     if (appConfigFile.auth) usersAppConfig.auth = appConfigFile.auth;
@@ -60,7 +64,7 @@ export default class ConfigAccumulator {
       try { localPageInfo = JSON.parse(localStorage[localStorageKeys.PAGE_INFO]); }
       catch (e) { ErrorHandler('Malformed pageInfo data in local storage'); }
     }
-    const filePageInfo = this.conf ? this.conf.pageInfo || {} : {};
+    const filePageInfo = (this.conf && this.conf.pageInfo) ? this.conf.pageInfo : {};
     return { ...defaultPageInfo, ...filePageInfo, ...localPageInfo };
   }
 

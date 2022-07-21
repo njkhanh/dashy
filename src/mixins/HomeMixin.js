@@ -5,6 +5,8 @@
 import Defaults, { localStorageKeys, iconCdns } from '@/utils/defaults';
 import Keys from '@/utils/StoreMutations';
 import { searchTiles } from '@/utils/Search';
+import { checkItemVisibility } from '@/utils/CheckItemVisibility';
+import { GetTheme, ApplyLocalTheme, ApplyCustomVariables } from '@/utils/ThemeHelper';
 
 const HomeMixin = {
   props: {
@@ -26,6 +28,9 @@ const HomeMixin = {
     modalOpen() {
       return this.$store.state.modalOpen;
     },
+    pageId() {
+      return (this.subPageInfo && this.subPageInfo.pageId) ? this.subPageInfo.pageId : 'home';
+    },
   },
   data: () => ({
     searchValue: '',
@@ -36,6 +41,7 @@ const HomeMixin = {
   watch: {
     async $route() {
       await this.getConfigForRoute();
+      this.setTheme();
     },
   },
   methods: {
@@ -46,6 +52,20 @@ const HomeMixin = {
       } else { // Otherwise, use main config
         this.$store.commit(Keys.USE_MAIN_CONFIG);
       }
+    },
+    /* TEMPORARY: If on sub-page, check if custom theme is set and return it */
+    getSubPageTheme() {
+      if (!this.pageId || this.pageId === 'home') {
+        return null;
+      } else {
+        const themeStoreKey = `${localStorageKeys.THEME}-${this.pageId}`;
+        return localStorage[themeStoreKey] || null;
+      }
+    },
+    setTheme() {
+      const theme = this.getSubPageTheme() || GetTheme();
+      ApplyLocalTheme(theme);
+      ApplyCustomVariables(theme);
     },
     updateModalVisibility(modalState) {
       this.$store.commit('SET_MODAL_OPEN', modalState);
@@ -61,8 +81,11 @@ const HomeMixin = {
     },
     /* Returns only the tiles that match the users search query */
     filterTiles(allTiles) {
-      if (!allTiles) return [];
-      return searchTiles(allTiles, this.searchValue);
+      if (!allTiles) {
+        return [];
+      }
+      const visibleTiles = allTiles.filter((tile) => checkItemVisibility(tile));
+      return searchTiles(visibleTiles, this.searchValue);
     },
     /* Checks if any sections or items use icons from a given CDN */
     checkIfIconLibraryNeeded(prefix) {

@@ -36,10 +36,12 @@ The following file provides a reference of all supported configuration options.
     - [`keycloak`](#appconfigauthkeycloak-optional) - Auth config for Keycloak
 - [**`sections`**](#section) - List of sections
   - [`displayData`](#sectiondisplaydata-optional) - Section display settings
-    - [`show/hideForKeycloakUsers`](#sectiondisplaydatahideforkeycloakusers-and-sectiondisplaydatashowforkeycloakusers) - Set user controls
+    - [`show/hideForKeycloakUsers`](#sectiondisplaydatahideforkeycloakusers-sectiondisplaydatashowforkeycloakusers-itemdisplaydatahideforkeycloakusers-and-itemdisplaydatashowforkeycloakusers) - Set user controls
   - [`icon`](#sectionicon-and-sectionitemicon) - Icon for a section
   - [`items`](#sectionitem) - List of items
     - [`icon`](#sectionicon-and-sectionitemicon) - Icon for an item
+    - [`displayData`](#itemdisplaydata-optional) - Item display settings
+      - [`show/hideForKeycloakUsers`](#sectiondisplaydatahideforkeycloakusers-sectiondisplaydatashowforkeycloakusers-itemdisplaydatahideforkeycloakusers-and-itemdisplaydatashowforkeycloakusers) - Set user controls
   - [`widgets`](#sectionwidget-optional) - List of widgets
 - [**Notes**](#notes)
   - [Editing Config through the UI](#editing-config-through-the-ui)
@@ -163,6 +165,7 @@ For more info, see the **[Authentication Docs](/docs/authentication.md)**
 **`serverUrl`** | `string` | Required | The URL (or URL/ IP + Port) where your keycloak server is running
 **`realm`** | `string` | Required | The name of the realm (must already be created) that you want to use
 **`clientId`** | `string` | Required | The Client ID of the client you created for use with Dashy
+**`legacySupport`** | `boolean` | _Optional_ | If using Keycloak 17 or older, then set this to `true`
 
 **[⬆️ Back to Top](#configuring)**
 
@@ -223,8 +226,23 @@ For more info, see the **[Authentication Docs](/docs/authentication.md)**
 **`color`** | `string` | _Optional_ | An optional color for the text and font-awesome icon to be displayed in. Note that this will override the current theme and so may not display well
 **`backgroundColor`** | `string` | _Optional_ | An optional background fill color for the that given item. Again, this will override the current theme and so might not display well against the background
 **`provider`** | `string` | _Optional_ | The name of the provider for a given service, useful for when including hosted apps. In some themes, this is visible under the item name
+**`displayData`** | `object` | _Optional_ | Meta-data to optionally overide display settings for a given item. See [`displayData`](#itemdisplaydata-optional)
 
 **[⬆️ Back to Top](#configuring)**
+
+
+### `item.displayData` _(optional)_
+
+**Field** | **Type** | **Required**| **Description**
+--- | --- | --- | ---
+**`hideForUsers`** | `string[]` | _Optional_ | Current item will be visible to all users, except for those specified in this list
+**`showForUsers`** | `string[]` | _Optional_ | Current item will be hidden from all users, except for those specified in this list
+**`hideForGuests`** | `boolean` | _Optional_ | Current item will be visible for logged in users, but not for guests (see `appConfig.enableGuestAccess`). Defaults to `false`
+**`hideForKeycloakUsers`** | `object`  | _Optional_ | Current item will be visible to all keycloak users, except for those configured via these groups and roles. See `hideForKeycloakUsers`
+**`showForKeycloakUsers`** | `object`  | _Optional_ | Current item will be hidden from all keycloak users, except for those configured via these groups and roles. See `showForKeycloakUsers`
+
+**[⬆️ Back to Top](#configuring)**
+
 
 ### `section.widget` _(optional)_
 
@@ -235,6 +253,8 @@ For more info, see the **[Authentication Docs](/docs/authentication.md)**
 **`updateInterval`** | `number` | _Optional_ | You can keep a widget constantly updated by specifying an update interval, in seconds. See [Continuous Updates Docs](/docs/widgets.md#continuous-updates) for more info
 **`useProxy`** | `boolean` | _Optional_ | Some widgets make API requests to services that are not CORS-enabled. For these instances, you will need to route requests through a proxy, Dashy has a built in CORS-proxy, which you can use by setting this option to `true`. Defaults to `false`. See the [Proxying Requests Docs](/docs/widgets.md#proxying-requests) for more info
 **`timeout`** | `number` | _Optional_ | Request timeout in milliseconds, defaults to ½ a second (`500`)
+**`ignoreErrors`** | `boolean` | _Optional_ | Prevent an error message being displayed, if a network request or something else fails. Useful for false-positives
+**`label`** | `string` | _Optional_ | Add custom label to a given widget. Useful for identification, if there are multiple of the same type of widget in a single section 
 
 **[⬆️ Back to Top](#configuring)**
 
@@ -258,7 +278,7 @@ For more info, see the **[Authentication Docs](/docs/authentication.md)**
 **`showForUsers`** | `string[]` | _Optional_ | Current section will be hidden from all users, except for those specified in this list
 **`hideForGuests`** | `boolean` | _Optional_ | Current section will be visible for logged in users, but not for guests (see `appConfig.enableGuestAccess`). Defaults to `false`
 **`hideForKeycloakUsers`** | `object`  | _Optional_ | Current section will be visible to all keycloak users, except for those configured via these groups and roles. See `hideForKeycloakUsers`
-**`showForKeycloakUsers`** | `object`  | _Optional_ | Current section will be hidden from all keyclaok users, except for those configured via these groups and roles. See `showForKeycloakUsers`
+**`showForKeycloakUsers`** | `object`  | _Optional_ | Current section will be hidden from all keycloak users, except for those configured via these groups and roles. See `showForKeycloakUsers`
 
 **[⬆️ Back to Top](#configuring)**
 
@@ -270,12 +290,12 @@ For more info, see the **[Authentication Docs](/docs/authentication.md)**
 
 **[⬆️ Back to Top](#configuring)**
 
-### `section.displayData.hideForKeycloakUsers` and `section.displayData.showForKeycloakUsers`
+### `section.displayData.hideForKeycloakUsers`, `section.displayData.showForKeycloakUsers`, `item.displayData.hideForKeycloakUsers` and `item.displayData.showForKeycloakUsers`
 
 **Field** | **Type**   | **Required**| **Description**
 --- |------------| --- | ---
-**`groups`** | `string[]` | _Optional_ | Current Section will be hidden or shown based on the user having any of the groups in this list
-**`roles`** | `string[]` | _Optional_ | Current Section will be hidden or shown based on the user having any of the roles in this list
+**`groups`** | `string[]` | _Optional_ | Current Section or Item will be hidden or shown based on the user having any of the groups in this list
+**`roles`** | `string[]` | _Optional_ | Current Section or Item will be hidden or shown based on the user having any of the roles in this list
 
 **[⬆️ Back to Top](#configuring)**
 
@@ -311,7 +331,7 @@ When updating the config through the JSON editor in the UI, you have two save op
 
 If you have authentication set up, then any user who is not an admin (with `type: admin`) will not be able to write changes to disk.
 
-You can also prevent changes fro any user being written to disk, using `preventWriteToDisk`. Or prevent any changes from being saved locally in browser storage, using `preventLocalSave`.
+You can also prevent changes from any user being written to disk, using `preventWriteToDisk`. Or prevent any changes from being saved locally in browser storage, using `preventLocalSave`.
 
 To disable all UI config features, set `disableConfiguration`.
 
