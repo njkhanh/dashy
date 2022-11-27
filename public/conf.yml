@@ -114,6 +114,16 @@ sections:
         url: https://console.cloud.google.com/
         target: newtab
         id: 9_836_gcp
+      - title: counter.
+        icon: fas fa-chart-pie
+        url: https://counter.dev/dashboard.html
+        target: newtab
+        id: 10_836_counter
+      - title: statvoo
+        icon: fas fa-analytics
+        url: https://analytics.statvoo.com/websites
+        target: newtab
+        id: 11_836_statvoo
     displayData:
       sortBy: default
       rows: 1
@@ -199,6 +209,37 @@ sections:
         icon: https://go.2kvn.com/file/png/2022/05/72.png
         url: https://tinhlinh.com/
         id: 1_750_tinhlinh
+      - title: anhtinh
+        icon: fas fa-female
+        url: https://anhtinh.com/
+        target: newtab
+        id: 2_750_anhtinh
+      - title: TruyenTranh
+        icon: fas fa-comments-alt
+        url: https://truyentranh.us/
+        target: newtab
+        id: 3_750_truyentranh
+      - title: yap0
+        description: ''
+        icon: far fa-box
+        url: https://yap0.com/
+        target: newtab
+        id: 4_750_yap
+      - title: thuvienplus
+        icon: far fa-book
+        url: https://thuvienplus.com/
+        target: newtab
+        id: 5_750_thuvienplus
+      - title: storj v5
+        icon: fas fa-disc-drive
+        url: http://v5.njkhanh.com:14002/
+        target: newtab
+        id: 6_750_storjv
+      - title: vps w
+        icon: fa fa-server
+        url: >-
+          https://vpshostingservice.co/clientarea.php?action=productdetails&id=177993&mg-action=novnc
+        id: 7_750_vpsw
   - name: Bookmark
     icon: fas fa-star
     displayData:
@@ -208,18 +249,47 @@ sections:
       collapsed: false
       hideForGuests: false
     items:
-      - title: adskeeper
-        icon: https://dashboard.adskeeper.co.uk/styles/adskeeper/favicon.ico
-        url: https://dashboard.adskeeper.co.uk/publisher
-        target: newtab
-        id: 0_822_adskeeper
       - title: Rentrack
         icon: https://rentracks.com.vn/wp-content/uploads/2020/03/favicon.ico
         url: https://manage.rentracksw.com/manage/top
         target: newtab
-        id: 1_822_rentrack
+        id: 0_822_rentrack
       - title: Propellerads
         icon: favicon
         url: https://publishers.propellerads.com/
         target: newtab
-        id: 2_822_propellerads
+        id: 1_822_propellerads
+      - title: adskeeper
+        icon: https://dashboard.adskeeper.co.uk/styles/adskeeper/favicon.ico
+        url: https://dashboard.adskeeper.co.uk/publisher
+        target: parent
+        id: 2_822_adskeeper
+      - title: hit4hit
+        icon: favicon
+        url: http://www.hit4hit.org/
+        target: newtab
+        id: 3_822_hithit
+      - title: terabox
+        description: terabox
+        icon: favicon
+        url: https://www.terabox.com/
+        target: newtab
+        id: 4_822_terabox
+      - title: Adtrue
+        description: ''
+        icon: fas fa-ad
+        url: https://publishers.adtrue.com/analytics
+        target: newtab
+        id: 5_822_adtrue
+      - title: T6_4A
+        icon: fa fa-file-excel
+        url: >-
+          https://docs.google.com/spreadsheets/d/13De-r-YM51v-jTt4RCuNf8bzo-ALzf5hi4yc7hP6UMw/edit?usp=sharing
+        target: newtab
+        id: 6_822_ta
+      - title: T7
+        icon: fa fa-file-excel
+        url: >-
+          https://docs.google.com/spreadsheets/d/1w9VgvsONA7m2q0uRLFODytFyDGG1rIHjUQBtkRSyKk4/edit?usp=sharing
+        target: newtab
+        id: 7_822_t
