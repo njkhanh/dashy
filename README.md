@@ -214,7 +214,7 @@ The following icon types are supported:
 [font-awesome]: https://fontawesome.com/icons
 [simple-icons]: https://simpleicons.org/
 [material icons]: https://github.com/Templarian/MaterialDesign
-[dashboard-icons]: https://github.com/WalkxHub/dashboard-icons
+[dashboard-icons]: https://github.com/WalkxCode/dashboard-icons
 
 
 <p align="center">
@@ -421,6 +421,8 @@ Dashy supports multiple languages and locales. When available, your language sho
 - 🇮🇳 **Hindi**: `hi`
 - 🇯🇵 **Japanese**: `ja`
 - 🇰🇷 **Korean**: `ko` - Contributed by **[@boggy-cs](https://github.com/boggy-cs)**
+- 🇸🇰 **Slovak**: `sk` - Contributed by **[@Smexhy](https://github.com/Smexhy)**
+- 🇩🇰 **Danish**: `da` - Contributed by **[@lordpansar](https://github.com/lordpansar)**
 
 #### Add your Language
 I would love Dashy to be available to everyone without language being a barrier to entry. If you've got a few minutes to spare, consider adding translations for your language. It's a quick task, and all text is in [a single JSON file](https://github.com/Lissy93/dashy/tree/master/src/assets/locales). Since any missing text will fall back to English, you don't need to translate it all.
@@ -522,6 +524,20 @@ Huge thanks to the sponsors helping to support Dashy's development!
 <table>
 <tr>
     <td align="center">
+        <a href="https://github.com/koconder">
+            <img src="https://avatars.githubusercontent.com/u/25068?u=582657b23622aaa3dfe68bd028a780f272f456fa&v=4" width="80;" alt="koconder"/>
+            <br />
+            <sub><b>Vincent Koc</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Keloran">
+            <img src="https://avatars.githubusercontent.com/u/200350?v=4" width="80;" alt="Keloran"/>
+            <br />
+            <sub><b>Max Hooton</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/peng1can">
             <img src="https://avatars.githubusercontent.com/u/225854?v=4" width="80;" alt="peng1can"/>
             <br />
@@ -536,8 +552,30 @@ Huge thanks to the sponsors helping to support Dashy's development!
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/Geolim4">
+            <img src="https://avatars.githubusercontent.com/u/1332071?u=5d84984897f094932c4829583fee19b121f3aab8&v=4" width="80;" alt="Geolim4"/>
+            <br />
+            <sub><b>Georges.L</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/AnandChowdhary">
+            <img src="https://avatars.githubusercontent.com/u/2841780?u=ca8e292b15abcc6cddaeae0abded0115c51b4789&v=4" width="80;" alt="AnandChowdhary"/>
+            <br />
+            <sub><b>Anand Chowdhary</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/davidpaulyoung">
+            <img src="https://avatars.githubusercontent.com/u/3418369?v=4" width="80;" alt="davidpaulyoung"/>
+            <br />
+            <sub><b>David Young</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/k-rol">
-            <img src="https://avatars.githubusercontent.com/u/4050412?v=4" width="80;" alt="k-rol"/>
+            <img src="https://avatars.githubusercontent.com/u/4050412?u=1162510eec7b7aeb31d4c7c65d51d4f773d823b0&v=4" width="80;" alt="k-rol"/>
             <br />
             <sub><b>Carol Ouellet</b></sub>
         </a>
@@ -558,26 +596,19 @@ Huge thanks to the sponsors helping to support Dashy's development!
     </td>
     <td align="center">
         <a href="https://github.com/AdamXweb">
-            <img src="https://avatars.githubusercontent.com/u/6800453?v=4" width="80;" alt="AdamXweb"/>
+            <img src="https://avatars.githubusercontent.com/u/6800453?u=3be969c9df11fa94351c42da8134ce3eaf33d6f1&v=4" width="80;" alt="AdamXweb"/>
             <br />
             <sub><b>Adam Kostarelas</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/bmcgonag">
             <img src="https://avatars.githubusercontent.com/u/7346620?u=2a0f9284f3e12ac1cc15288c254d1ec68a5081e8&v=4" width="80;" alt="bmcgonag"/>
             <br />
             <sub><b>Brian McGonagill</b></sub>
         </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Robert-Ernst">
-            <img src="https://avatars.githubusercontent.com/u/9050259?u=7253b4063f1ffe3b5a894263c8b2056151802508&v=4" width="80;" alt="Robert-Ernst"/>
-            <br />
-            <sub><b>Robert Ernst</b></sub>
-        </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/vlad-timofeev">
             <img src="https://avatars.githubusercontent.com/u/11474041?v=4" width="80;" alt="vlad-timofeev"/>
@@ -586,39 +617,17 @@ Huge thanks to the sponsors helping to support Dashy's development!
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/kitl000">
-            <img src="https://avatars.githubusercontent.com/u/19974513?u=6b426af87e6a57781e9b819a37393543db6d68ec&v=4" width="80;" alt="kitl000"/>
-            <br />
-            <sub><b>Kit L.</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/mDafox">
-            <img src="https://avatars.githubusercontent.com/u/21359974?v=4" width="80;" alt="mDafox"/>
-            <br />
-            <sub><b>Manu Devos</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/Byolock">
             <img src="https://avatars.githubusercontent.com/u/25748003?v=4" width="80;" alt="Byolock"/>
             <br />
             <sub><b>Byolock</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/PAPAMICA">
             <img src="https://avatars.githubusercontent.com/u/29079741?v=4" width="80;" alt="PAPAMICA"/>
             <br />
             <sub><b>Mickael Asseline</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/hugalafutro">
-            <img src="https://avatars.githubusercontent.com/u/30209689?v=4" width="80;" alt="hugalafutro"/>
-            <br />
-            <sub><b>Hugalafutro</b></sub>
         </a>
     </td>
     <td align="center">
@@ -629,10 +638,10 @@ Huge thanks to the sponsors helping to support Dashy's development!
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/KierenConnell">
-            <img src="https://avatars.githubusercontent.com/u/46445781?u=5502f8fb780938e2825735d7bbb9236642d212c0&v=4" width="80;" alt="KierenConnell"/>
+        <a href="https://github.com/Hue899">
+            <img src="https://avatars.githubusercontent.com/u/67720949?u=3138b65cb48b5434f4c5a248152a1de66d30b13c&v=4" width="80;" alt="Hue899"/>
             <br />
-            <sub><b>Kieren Connell</b></sub>
+            <sub><b>NKA</b></sub>
         </a>
     </td>
     <td align="center">
@@ -641,13 +650,6 @@ Huge thanks to the sponsors helping to support Dashy's development!
             <br />
             <sub><b>Ratty222</b></sub>
         </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/undefined">
-            <img src="" width="80;" alt="undefined"/>
-            <br />
-            <sub><b>Undefined</b></sub>
-        </a>
     </td></tr>
 <tr>
     <td align="center">
@@ -655,20 +657,6 @@ Huge thanks to the sponsors helping to support Dashy's development!
             <img src="https://avatars.githubusercontent.com/u/96497997?v=4" width="80;" alt="jtfinley72"/>
             <br />
             <sub><b>Jtfinley72</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/CynegeticIO">
-            <img src="https://avatars.githubusercontent.com/u/103884082?v=4" width="80;" alt="CynegeticIO"/>
-            <br />
-            <sub><b>CynegeticIO</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/zacharyraber">
-            <img src="https://avatars.githubusercontent.com/u/105998568?v=4" width="80;" alt="zacharyraber"/>
-            <br />
-            <sub><b>Zachary Raber</b></sub>
         </a>
     </td></tr>
 </table>

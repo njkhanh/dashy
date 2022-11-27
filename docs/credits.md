@@ -1,9 +1,23 @@
 # Credits
 
-### Sponsors
+## Sponsors
 <!-- readme: sponsors -start -->
 <table>
 <tr>
+    <td align="center">
+        <a href="https://github.com/koconder">
+            <img src="https://avatars.githubusercontent.com/u/25068?u=582657b23622aaa3dfe68bd028a780f272f456fa&v=4" width="80;" alt="koconder"/>
+            <br />
+            <sub><b>Vincent Koc</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Keloran">
+            <img src="https://avatars.githubusercontent.com/u/200350?v=4" width="80;" alt="Keloran"/>
+            <br />
+            <sub><b>Max Hooton</b></sub>
+        </a>
+    </td>
     <td align="center">
         <a href="https://github.com/peng1can">
             <img src="https://avatars.githubusercontent.com/u/225854?v=4" width="80;" alt="peng1can"/>
@@ -19,8 +33,30 @@
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/Geolim4">
+            <img src="https://avatars.githubusercontent.com/u/1332071?u=5d84984897f094932c4829583fee19b121f3aab8&v=4" width="80;" alt="Geolim4"/>
+            <br />
+            <sub><b>Georges.L</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/AnandChowdhary">
+            <img src="https://avatars.githubusercontent.com/u/2841780?u=ca8e292b15abcc6cddaeae0abded0115c51b4789&v=4" width="80;" alt="AnandChowdhary"/>
+            <br />
+            <sub><b>Anand Chowdhary</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/davidpaulyoung">
+            <img src="https://avatars.githubusercontent.com/u/3418369?v=4" width="80;" alt="davidpaulyoung"/>
+            <br />
+            <sub><b>David Young</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/k-rol">
-            <img src="https://avatars.githubusercontent.com/u/4050412?v=4" width="80;" alt="k-rol"/>
+            <img src="https://avatars.githubusercontent.com/u/4050412?u=1162510eec7b7aeb31d4c7c65d51d4f773d823b0&v=4" width="80;" alt="k-rol"/>
             <br />
             <sub><b>Carol Ouellet</b></sub>
         </a>
@@ -41,26 +77,19 @@
     </td>
     <td align="center">
         <a href="https://github.com/AdamXweb">
-            <img src="https://avatars.githubusercontent.com/u/6800453?v=4" width="80;" alt="AdamXweb"/>
+            <img src="https://avatars.githubusercontent.com/u/6800453?u=3be969c9df11fa94351c42da8134ce3eaf33d6f1&v=4" width="80;" alt="AdamXweb"/>
             <br />
             <sub><b>Adam Kostarelas</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/bmcgonag">
             <img src="https://avatars.githubusercontent.com/u/7346620?u=2a0f9284f3e12ac1cc15288c254d1ec68a5081e8&v=4" width="80;" alt="bmcgonag"/>
             <br />
             <sub><b>Brian McGonagill</b></sub>
         </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Robert-Ernst">
-            <img src="https://avatars.githubusercontent.com/u/9050259?u=7253b4063f1ffe3b5a894263c8b2056151802508&v=4" width="80;" alt="Robert-Ernst"/>
-            <br />
-            <sub><b>Robert Ernst</b></sub>
-        </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/vlad-timofeev">
             <img src="https://avatars.githubusercontent.com/u/11474041?v=4" width="80;" alt="vlad-timofeev"/>
@@ -69,39 +98,17 @@
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/kitl000">
-            <img src="https://avatars.githubusercontent.com/u/19974513?u=6b426af87e6a57781e9b819a37393543db6d68ec&v=4" width="80;" alt="kitl000"/>
-            <br />
-            <sub><b>Kit L.</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/mDafox">
-            <img src="https://avatars.githubusercontent.com/u/21359974?v=4" width="80;" alt="mDafox"/>
-            <br />
-            <sub><b>Manu Devos</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/Byolock">
             <img src="https://avatars.githubusercontent.com/u/25748003?v=4" width="80;" alt="Byolock"/>
             <br />
             <sub><b>Byolock</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/PAPAMICA">
             <img src="https://avatars.githubusercontent.com/u/29079741?v=4" width="80;" alt="PAPAMICA"/>
             <br />
             <sub><b>Mickael Asseline</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/hugalafutro">
-            <img src="https://avatars.githubusercontent.com/u/30209689?v=4" width="80;" alt="hugalafutro"/>
-            <br />
-            <sub><b>Hugalafutro</b></sub>
         </a>
     </td>
     <td align="center">
@@ -112,10 +119,10 @@
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/KierenConnell">
-            <img src="https://avatars.githubusercontent.com/u/46445781?u=5502f8fb780938e2825735d7bbb9236642d212c0&v=4" width="80;" alt="KierenConnell"/>
+        <a href="https://github.com/Hue899">
+            <img src="https://avatars.githubusercontent.com/u/67720949?u=3138b65cb48b5434f4c5a248152a1de66d30b13c&v=4" width="80;" alt="Hue899"/>
             <br />
-            <sub><b>Kieren Connell</b></sub>
+            <sub><b>NKA</b></sub>
         </a>
     </td>
     <td align="center">
@@ -123,13 +130,6 @@
             <img src="https://avatars.githubusercontent.com/u/92832598?u=137b65530cbd5f5af9c24cde51baa6cc77cc934b&v=4" width="80;" alt="ratty222"/>
             <br />
             <sub><b>Ratty222</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/undefined">
-            <img src="" width="80;" alt="undefined"/>
-            <br />
-            <sub><b>Undefined</b></sub>
         </a>
     </td></tr>
 <tr>
@@ -139,25 +139,11 @@
             <br />
             <sub><b>Jtfinley72</b></sub>
         </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/CynegeticIO">
-            <img src="https://avatars.githubusercontent.com/u/103884082?v=4" width="80;" alt="CynegeticIO"/>
-            <br />
-            <sub><b>CynegeticIO</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/zacharyraber">
-            <img src="https://avatars.githubusercontent.com/u/105998568?v=4" width="80;" alt="zacharyraber"/>
-            <br />
-            <sub><b>Zachary Raber</b></sub>
-        </a>
     </td></tr>
 </table>
 <!-- readme: sponsors -end -->
 
-### Contributors
+## Contributors
 <!-- readme: contributors -start -->
 <table>
 <tr>
@@ -233,10 +219,39 @@
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/jammo2k5">
+            <img src="https://avatars.githubusercontent.com/u/8106602?v=4" width="80;" alt="jammo2k5"/>
+            <br />
+            <sub><b>Jammo2k5</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/lordpansar">
+            <img src="https://avatars.githubusercontent.com/u/14231148?v=4" width="80;" alt="lordpansar"/>
+            <br />
+            <sub><b>Magnus Sundström</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/Cereal916">
+            <img src="https://avatars.githubusercontent.com/u/7526937?v=4" width="80;" alt="Cereal916"/>
+            <br />
+            <sub><b>Kristian Brasel</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/UrekD">
             <img src="https://avatars.githubusercontent.com/u/38784343?v=4" width="80;" alt="UrekD"/>
             <br />
             <sub><b>UrekD</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Tracreed">
+            <img src="https://avatars.githubusercontent.com/u/6306365?v=4" width="80;" alt="Tracreed"/>
+            <br />
+            <sub><b>David Alasow</b></sub>
         </a>
     </td>
     <td align="center">
@@ -245,18 +260,25 @@
             <br />
             <sub><b>Remygrandin</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Totto16">
+            <img src="https://avatars.githubusercontent.com/u/32566573?v=4" width="80;" alt="Totto16"/>
+            <br />
+            <sub><b>Totto16</b></sub>
+        </a>
+    </td>
     <td align="center">
         <a href="https://github.com/alucarddelta">
             <img src="https://avatars.githubusercontent.com/u/20882097?v=4" width="80;" alt="alucarddelta"/>
             <br />
             <sub><b>Brent</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
-        <a href="https://github.com/boggy-cs">
-            <img src="https://avatars.githubusercontent.com/u/82003678?v=4" width="80;" alt="boggy-cs"/>
+        <a href="https://github.com/Bogyie">
+            <img src="https://avatars.githubusercontent.com/u/82003678?v=4" width="80;" alt="Bogyie"/>
             <br />
             <sub><b>Bogyeong Kim</b></sub>
         </a>
@@ -266,6 +288,13 @@
             <img src="https://avatars.githubusercontent.com/u/37040069?v=4" width="80;" alt="stanly0726"/>
             <br />
             <sub><b>Stanly0726</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/rubenandre">
+            <img src="https://avatars.githubusercontent.com/u/9402773?v=4" width="80;" alt="rubenandre"/>
+            <br />
+            <sub><b>Rúben Silva</b></sub>
         </a>
     </td>
     <td align="center">
@@ -305,10 +334,10 @@
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/rubenandre">
-            <img src="https://avatars.githubusercontent.com/u/9402773?v=4" width="80;" alt="rubenandre"/>
+        <a href="https://github.com/thomasdissert">
+            <img src="https://avatars.githubusercontent.com/u/11446531?v=4" width="80;" alt="thomasdissert"/>
             <br />
-            <sub><b>Rúben Silva</b></sub>
+            <sub><b>Thomas Dissert</b></sub>
         </a>
     </td>
     <td align="center">
@@ -324,55 +353,11 @@
             <br />
             <sub><b>Patrick Heeney</b></sub>
         </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Singebob">
-            <img src="https://avatars.githubusercontent.com/u/24290044?v=4" width="80;" alt="Singebob"/>
-            <br />
-            <sub><b>Jeremy Chauvin</b></sub>
-        </a>
-    </td></tr>
-<tr>
-    <td align="center">
-        <a href="https://github.com/0n1cOn3">
-            <img src="https://avatars.githubusercontent.com/u/27576311?v=4" width="80;" alt="0n1cOn3"/>
-            <br />
-            <sub><b>0n1cOn3</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/BRAVO68WEB">
-            <img src="https://avatars.githubusercontent.com/u/41448663?v=4" width="80;" alt="BRAVO68WEB"/>
-            <br />
-            <sub><b>Jyotirmoy Bandyopadhyaya [Bravo68]</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/BeginCI">
-            <img src="https://avatars.githubusercontent.com/u/57495754?v=4" width="80;" alt="BeginCI"/>
-            <br />
-            <sub><b>Begin</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/skaarj1989">
-            <img src="https://avatars.githubusercontent.com/u/34756939?v=4" width="80;" alt="skaarj1989"/>
-            <br />
-            <sub><b>David</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/deepsourcebot">
-            <img src="https://avatars.githubusercontent.com/u/60907429?v=4" width="80;" alt="deepsourcebot"/>
-            <br />
-            <sub><b>DeepSource Bot</b></sub>
-        </a>
     </td></tr>
 </table>
 <!-- readme: contributors -end -->
 
-
-### Helpful Users
+## Helpful Users
 <!-- readme: EVOTk,shadowking001,UrekD,DylanBeMe,MilesTEG1,lu4t -start -->
 <table>
 <tr>
@@ -421,7 +406,7 @@
 </table>
 <!-- readme: EVOTk,shadowking001,UrekD,DylanBeMe,MilesTEG1,lu4t -end -->
 
-### Bots
+## Bots
 <!-- readme: liss-bot,snyk-bot,netlify,viezly,muse-dev,bots -start -->
 <table>
 <tr>
@@ -472,7 +457,7 @@
 
 > The above section is auto-generated, using [contribute-list](https://github.com/marketplace/actions/contribute-list) by @akhilmhdh.
 
-### Newest Stargazers
+## Newest Stargazers
 
 [![Recent Star Gazers](https://reporoster.com/stars/dark/Lissy93/dashy)](https://github.com/Lissy93/dashy/stargazers)
 
@@ -484,17 +469,20 @@
 
 This app definitely wouldn't have been quite so possible without the making use of the following package and components. Full credit and big kudos to their respective authors, who've done an amazing job in building and maintaining them. For a full breakdown of dependency licenses, please see [Legal](https://github.com/Lissy93/dashy/blob/master/.github/LEGAL.md)
 
-#### Core
+### Core
+
 At it's core, the application uses [**Vue.js**](https://github.com/vuejs/vue), as well as it's services with [**VueX**](https://vuex.vuejs.org/) for state management. Styling is done with [**SCSS**](https://github.com/sass/sass), JavaScript is currently [**Babel**](https://github.com/babel/babel), (but I am in the process of converting to [**TypeScript**](https://github.com/Microsoft/TypeScript)). Linting is done with [**ESLint**](https://github.com/eslint/eslint) and [**Prettier**](https://prettier.io/), both following the [**AirBnB Styleguide**](https://github.com/airbnb/javascript). The config is defined in [**YAML**](https://github.com/yaml/yaml), with a simple [**Node.js**](https://github.com/nodejs/node) server to serve up the static app and the optional API endpoints, and container deployment is done with [**Docker**](https://www.docker.com/).
 
-#### Utilities
+### Utilities
+
 - [`crypto-js`](https://github.com/brix/crypto-js) - Encryption implementations by @evanvosberg and community `MIT`
 - [`axios`](https://github.com/axios/axios) - Promise based HTTP client by @mzabriskie and community `MIT`
 - [`ajv`](https://github.com/ajv-validator/ajv) - JSON schema Validator by @epoberezkin and community `MIT`
 - [`i18n`](https://github.com/kazupon/vue-i18n) - Internationalization plugin by @kazupon and community `MIT`
 - [`frappe-charts`](https://github.com/frappe/charts) - Lightweight charting library by @frappe `MIT`
 
-#### Frontend Components
+### Frontend Components
+
 - [`vue-select`](https://github.com/sagalbot/vue-select) - Dropdown component by @sagalbot `MIT`
 - [`vue-js-modal`](https://github.com/euvl/vue-js-modal) - Modal component by @euvl `MIT`
 - [`v-tooltip`](https://github.com/Akryum/v-tooltip) - Tooltip component by @Akryum `MIT`
@@ -504,13 +492,16 @@ At it's core, the application uses [**Vue.js**](https://github.com/vuejs/vue), a
 - [`vue-toasted`](https://github.com/shakee93/vue-toasted) - Toast notification component by @shakee93 `MIT`
 - [`vue-swatches`](https://github.com/saintplay/vue-swatches) - Color palete picker by @saintplay `MIT`
 
-#### Backup & Sync Server
+### Backup & Sync Server
+
 Although the app is purely frontend, there is an optional cloud sync feature, for off-site backup and restore. This is built as a serverless function on [Cloudflare workers](https://workers.cloudflare.com/) using [KV](https://developers.cloudflare.com/workers/runtime-apis/kv) and [web crypto](https://developers.cloudflare.com/workers/runtime-apis/web-crypto)
 
-#### External Services
+### External Services
+
 The 1-Click deploy demo uses [Play-with-Docker Labs](https://play-with-docker.com/). Code is hosted on [GitHub](https://github.com), Docker images are hosted on [DockerHub](https://hub.docker.com/), and the demos are hosted on [Netlify](https://www.netlify.com/).
 
-#### Actions
+### Actions
+
 This repo makes heavy use of [GitHub actions](https://github.com/features/actions) to run automated workflows. The following base actions are totally awesome, and have been extremely useful. Full credit to their respective authors
 
 - [`action-autotag`](https://github.com/butlerlogic/action-autotag) by @butlerlogic - Tags new versions when app version changes
@@ -532,5 +523,6 @@ This repo makes heavy use of [GitHub actions](https://github.com/features/action
 
 ---
 
-## You!
+## You
+
 Would you like to be listed here? Whatever your skill set, Dashy needs people like you to help support future development. Check out the [Contributing Page](/docs/contributing.md) for ways that you can get involved. Huge thank you to everyone who has already contributed! 💖
