@@ -181,9 +181,9 @@ sections:
         target: newtab
         id: 7_832_truyenfull
       - title: Wikidich
-        icon: https://wikidth.net/static/img/favicon.ico
+        icon: https://wikisach.net/static/img/favicon.ico
         url: >-
-          https://wikidth.net/tim-kiem?qs=1&gender=5794f03dd7ced228f4419196&so=4&genre=584be74112fb553ddf759053&start=0
+          https://wikisach.net/tim-kiem?qs=1&gender=5794f03dd7ced228f4419196&so=4&genre=584be74112fb553ddf759053&start=0
         target: newtab
         id: 8_832_wikidich
       - title: NovelUpdate
