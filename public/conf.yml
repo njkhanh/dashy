@@ -237,8 +237,7 @@ sections:
         id: 6_750_storjv
       - title: vps w
         icon: fa fa-server
-        url: >-
-          https://vpshostingservice.co/clientarea.php?action=productdetails&id=177993&mg-action=novnc
+        url: https://vpshostingservice.co/clientarea.php
         id: 7_750_vpsw
   - name: Bookmark
     icon: fas fa-star
@@ -254,11 +253,11 @@ sections:
         url: https://manage.rentracksw.com/manage/top
         target: newtab
         id: 0_822_rentrack
-      - title: Propellerads
-        icon: favicon
-        url: https://publishers.propellerads.com/
+      - title: monetag
+        icon: https://publishers.monetag.com/assets/favicon-16x16.png
+        url: https://publishers.monetag.com/
         target: newtab
-        id: 1_822_propellerads
+        id: 1_822_monetag
       - title: adskeeper
         icon: https://dashboard.adskeeper.co.uk/styles/adskeeper/favicon.ico
         url: https://dashboard.adskeeper.co.uk/publisher
@@ -281,15 +280,18 @@ sections:
         url: https://publishers.adtrue.com/analytics
         target: newtab
         id: 5_822_adtrue
-      - title: T6_4A
-        icon: fa fa-file-excel
-        url: >-
-          https://docs.google.com/spreadsheets/d/13De-r-YM51v-jTt4RCuNf8bzo-ALzf5hi4yc7hP6UMw/edit?usp=sharing
+      - title: 9hits
+        icon: https://panel.9hits.com/public/template/dist/img/logo.png
+        url: https://panel.9hits.com/
         target: newtab
-        id: 6_822_ta
-      - title: T7
-        icon: fa fa-file-excel
-        url: >-
-          https://docs.google.com/spreadsheets/d/1w9VgvsONA7m2q0uRLFODytFyDGG1rIHjUQBtkRSyKk4/edit?usp=sharing
+        id: 6_822_hits
+      - title: goormide
+        icon: fas fa-terminal
+        url: https://ide-run.goorm.io/
         target: newtab
-        id: 7_822_t
+        id: 7_822_goormide
+      - title: 9hits
+        icon: https://panel.9hits.com/public/template/dist/img/logo.png
+        url: https://panel.9hits.com/
+        target: newtab
+        id: 8_822_hits
