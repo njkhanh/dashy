@@ -114,16 +114,6 @@ sections:
         url: https://console.cloud.google.com/
         target: newtab
         id: 9_836_gcp
-      - title: counter.
-        icon: fas fa-chart-pie
-        url: https://counter.dev/dashboard.html
-        target: newtab
-        id: 10_836_counter
-      - title: statvoo
-        icon: fas fa-analytics
-        url: https://analytics.statvoo.com/websites
-        target: newtab
-        id: 11_836_statvoo
     displayData:
       sortBy: default
       rows: 1
@@ -165,32 +155,33 @@ sections:
         url: https://2fa.live/
         target: newtab
         id: 4_832_faauth
-      - title: Uphold
-        icon: https://web-wallet-cdn.uphold.world/favicon/apple-touch-icon.png
-        url: https://wallet.uphold.com/dashboard
-        target: newtab
-        id: 5_832_uphold
       - title: TVE-4U
         icon: favicon
         url: http://tve-4u.org/
         target: newtab
-        id: 6_832_tveu
+        id: 5_832_tveu
       - title: TruyenFull
         icon: https://static.8cache.com/favicon.ico
         url: https://truyenfull.vn/the-loai/ngon-tinh/hoan/
         target: newtab
-        id: 7_832_truyenfull
+        id: 6_832_truyenfull
       - title: Wikidich
         icon: https://wikisach.net/static/img/favicon.ico
         url: >-
           https://wikisach.net/tim-kiem?qs=1&gender=5794f03dd7ced228f4419196&so=4&genre=584be74112fb553ddf759053&start=0
         target: newtab
-        id: 8_832_wikidich
-      - title: NovelUpdate
-        icon: https://www.novelupdates.com/appicon.png
-        url: https://www.novelupdates.com/
+        id: 7_832_wikidich
+      - title: metype
+        icon: fas fa-comment
+        url: https://www.metype.com/admin
         target: newtab
-        id: 9_832_novelupdate
+        id: 8_832_metype
+      - title: tld-list
+        description: domain price
+        icon: fas fa-network-wired
+        url: https://tld-list.com/
+        target: newtab
+        id: 9_832_tldlist
   - name: My Sites
     icon: fas fa-home
     displayData:
@@ -216,7 +207,7 @@ sections:
         id: 2_750_anhtinh
       - title: TruyenTranh
         icon: fas fa-comments-alt
-        url: https://truyentranh.us/
+        url: https://truyentranhz.info/
         target: newtab
         id: 3_750_truyentranh
       - title: yap0
@@ -230,15 +221,20 @@ sections:
         url: https://thuvienplus.com/
         target: newtab
         id: 5_750_thuvienplus
-      - title: storj v5
-        icon: fas fa-disc-drive
-        url: http://v5.njkhanh.com:14002/
-        target: newtab
-        id: 6_750_storjv
       - title: vps w
         icon: fa fa-server
         url: https://vpshostingservice.co/clientarea.php
-        id: 7_750_vpsw
+        id: 6_750_vpsw
+      - title: tinypng
+        icon: fas fa-images
+        url: https://tinypng.com/
+        target: newtab
+        id: 7_750_tinypng
+      - title: favicon
+        icon: fas fa-images
+        url: https://favicon.guru/
+        target: newtab
+        id: 8_750_favicon
   - name: Bookmark
     icon: fas fa-star
     displayData:
@@ -285,13 +281,28 @@ sections:
         url: https://panel.9hits.com/
         target: newtab
         id: 6_822_hits
-      - title: goormide
-        icon: fas fa-terminal
-        url: https://ide-run.goorm.io/
+      - title: traffmone
+        icon: favicon
+        url: https://app.traffmonetizer.com/dashboard
         target: newtab
-        id: 7_822_goormide
-      - title: 9hits
-        icon: https://panel.9hits.com/public/template/dist/img/logo.png
-        url: https://panel.9hits.com/
+        id: 7_822_traffmone
+      - title: honeygain
+        icon: favicon
+        url: https://dashboard.honeygain.com/
         target: newtab
-        id: 8_822_hits
+        id: 8_822_honeygain
+      - title: earnapp
+        icon: favicon
+        url: https://earnapp.com/dashboard
+        target: newtab
+        id: 9_822_earnapp
+      - title: myst
+        icon: favicon
+        url: https://mystnodes.com/nodes
+        target: newtab
+        id: 10_822_myst
+      - title: pawns
+        icon: favicon
+        url: https://dashboard.pawns.app/
+        target: newtab
+        id: 11_822_pawns
