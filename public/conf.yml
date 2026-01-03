@@ -74,46 +74,39 @@ sections:
         url: https://analytics.google.com/
         target: newtab
         id: 2_836_analytics
-      - title: DataStudio
-        description: ''
-        icon: >-
-          https://www.gstatic.com/analytics-suite/header/suite/v2/ic_data_studio.svg
-        url: https://datastudio.google.com/
-        target: newtab
-        id: 3_836_datastudio
       - title: Drive
         description: ''
         icon: >-
           http://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png
         url: https://drive.google.com/drive/
         target: newtab
-        id: 4_836_drive
+        id: 3_836_drive
       - title: Trends
         description: ''
         icon: fas fa-chart-line
         url: https://trends.google.com/trends/?geo=VN
         target: newtab
-        id: 5_836_trends
+        id: 4_836_trends
       - title: Console
         icon: https://ssl.gstatic.com/search-console/scfe/search_console-128.png
         url: http://search.google.com/search-console
         target: newtab
-        id: 6_836_console
+        id: 5_836_console
       - title: Clarity
         icon: https://claritystatic.azureedge.net/images/favicon.ico
         url: https://clarity.microsoft.com/projects
         target: newtab
-        id: 7_836_clarity
+        id: 6_836_clarity
       - title: BingMaster
         icon: https://www.bing.com/webmasters/Content/PWA/iOS/logo/bing-logo-152.png
         url: https://www.bing.com/webmasters
         target: newtab
-        id: 8_836_bingmaster
+        id: 7_836_bingmaster
       - title: GCP
         icon: https://ssl.gstatic.com/pantheon/images/favicon/default.png
         url: https://console.cloud.google.com/
         target: newtab
-        id: 9_836_gcp
+        id: 8_836_gcp
     displayData:
       sortBy: default
       rows: 1
@@ -139,49 +132,22 @@ sections:
         url: https://github.com/trending
         target: newtab
         id: 1_832_trending
-      - title: Creators
-        icon: favicon
-        url: https://publishers.basicattentiontoken.org/publishers/home?locale=en
-        target: newtab
-        id: 2_832_creators
       - title: CMC watch
         icon: >-
           https://s3.coinmarketcap.com/static/img/portraits/621c22097aafe46422aa1161.png
         url: https://coinmarketcap.com/watchlist/
         target: newtab
-        id: 3_832_cmcwatch
+        id: 2_832_cmcwatch
       - title: 2Fa auth
         icon: https://www.facebook.com/favicon.ico
         url: https://2fa.live/
         target: newtab
-        id: 4_832_faauth
-      - title: TVE-4U
-        icon: favicon
-        url: http://tve-4u.org/
-        target: newtab
-        id: 5_832_tveu
-      - title: TruyenFull
-        icon: https://static.8cache.com/favicon.ico
-        url: https://truyenfull.vn/the-loai/ngon-tinh/hoan/
-        target: newtab
-        id: 6_832_truyenfull
-      - title: Wikidich
-        icon: https://wikisach.net/static/img/favicon.ico
-        url: >-
-          https://wikisach.net/tim-kiem?qs=1&gender=5794f03dd7ced228f4419196&so=4&genre=584be74112fb553ddf759053&start=0
-        target: newtab
-        id: 7_832_wikidich
+        id: 3_832_faauth
       - title: metype
         icon: fas fa-comment
         url: https://www.metype.com/admin
         target: newtab
-        id: 8_832_metype
-      - title: tld-list
-        description: domain price
-        icon: fas fa-network-wired
-        url: https://tld-list.com/
-        target: newtab
-        id: 9_832_tldlist
+        id: 4_832_metype
   - name: My Sites
     icon: fas fa-home
     displayData:
@@ -205,36 +171,21 @@ sections:
         url: https://anhtinh.com/
         target: newtab
         id: 2_750_anhtinh
-      - title: TruyenTranh
+      - title: TruyenZ
         icon: fas fa-comments-alt
-        url: https://truyentranhz.info/
+        url: https://truyenz.top/
         target: newtab
-        id: 3_750_truyentranh
-      - title: yap0
-        description: ''
-        icon: far fa-box
-        url: https://yap0.com/
-        target: newtab
-        id: 4_750_yap
+        id: 3_750_truyenz
       - title: thuvienplus
         icon: far fa-book
         url: https://thuvienplus.com/
         target: newtab
-        id: 5_750_thuvienplus
-      - title: vps w
-        icon: fa fa-server
-        url: https://vpshostingservice.co/clientarea.php
-        id: 6_750_vpsw
+        id: 4_750_thuvienplus
       - title: tinypng
         icon: fas fa-images
         url: https://tinypng.com/
         target: newtab
-        id: 7_750_tinypng
-      - title: favicon
-        icon: fas fa-images
-        url: https://favicon.guru/
-        target: newtab
-        id: 8_750_favicon
+        id: 5_750_tinypng
   - name: Bookmark
     icon: fas fa-star
     displayData:
@@ -249,60 +200,43 @@ sections:
         url: https://manage.rentracksw.com/manage/top
         target: newtab
         id: 0_822_rentrack
-      - title: monetag
-        icon: https://publishers.monetag.com/assets/favicon-16x16.png
-        url: https://publishers.monetag.com/
-        target: newtab
-        id: 1_822_monetag
       - title: adskeeper
         icon: https://dashboard.adskeeper.co.uk/styles/adskeeper/favicon.ico
         url: https://dashboard.adskeeper.co.uk/publisher
         target: parent
-        id: 2_822_adskeeper
-      - title: hit4hit
-        icon: favicon
-        url: http://www.hit4hit.org/
-        target: newtab
-        id: 3_822_hithit
-      - title: terabox
-        description: terabox
-        icon: favicon
-        url: https://www.terabox.com/
-        target: newtab
-        id: 4_822_terabox
-      - title: Adtrue
-        description: ''
-        icon: fas fa-ad
-        url: https://publishers.adtrue.com/analytics
-        target: newtab
-        id: 5_822_adtrue
+        id: 1_822_adskeeper
       - title: 9hits
         icon: https://panel.9hits.com/public/template/dist/img/logo.png
         url: https://panel.9hits.com/
         target: newtab
-        id: 6_822_hits
+        id: 2_822_hits
       - title: traffmone
         icon: favicon
         url: https://app.traffmonetizer.com/dashboard
         target: newtab
-        id: 7_822_traffmone
+        id: 3_822_traffmone
       - title: honeygain
         icon: favicon
         url: https://dashboard.honeygain.com/
         target: newtab
-        id: 8_822_honeygain
+        id: 4_822_honeygain
       - title: earnapp
         icon: favicon
         url: https://earnapp.com/dashboard
         target: newtab
-        id: 9_822_earnapp
+        id: 5_822_earnapp
       - title: myst
         icon: favicon
-        url: https://mystnodes.com/nodes
+        url: https://my.mystnodes.com/nodes
         target: newtab
-        id: 10_822_myst
+        id: 6_822_myst
       - title: pawns
         icon: favicon
         url: https://dashboard.pawns.app/
         target: newtab
-        id: 11_822_pawns
+        id: 7_822_pawns
+      - title: Earnapp
+        icon: favicon
+        url: https://earnapp.com/dashboard/me/passive-income
+        target: newtab
+        id: 8_822_earnapp
